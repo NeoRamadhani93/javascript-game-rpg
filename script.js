@@ -21,6 +21,17 @@ button1.onclick=goStore;
 button2.onclick=goForest;
 button3.onclick=fightDragon;
 
+function goTown(){
+    button1.innerText = "ke toko"
+    button2.innerText = "ke hutan"
+    button3.innerText = "lawan naga"
+    button1.onclick=goStore;
+    button2.onclick=goForest;
+    button3.onclick=fightDragon;
+    text.innerText = "kamu berada di alun alun kota, kamu akan melihat tanda yang menunjukan \"toko\". ";
+
+}
+
 function goStore(){
     button1.innerText = "beli potion darah sebanyak 5 nyawa (10 Emas)"
     button2.innerText = "beli senjata (30 emas)"
@@ -35,4 +46,10 @@ function goForest(){
 }
 function fightDragon(){
     console.log("menghadapi naga")
+}
+function buyHealth(){
+
+}
+function buyWeapon(){
+
 }
