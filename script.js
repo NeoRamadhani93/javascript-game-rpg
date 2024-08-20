@@ -15,7 +15,7 @@ const healthText = document.querySelector("#healthText");
 const goldText = document.querySelector("#goldText");
 const monsterStats = document.querySelector("#monsterStats");
 const monsterNameText = document.querySelector("#monsterNameText");
-const monsterHealthText = document.querySelector("monsterHealthText");
+const monsterHealthText = document.querySelector("#monsterHealthText");
 
 const locations = [{
     name: "alun alun kota",
@@ -46,7 +46,7 @@ function goTown(){
    update(locations[0]);
 }
 function goStore(){
-    update(locations)[1];
+    update(locations[1]);
 }
 function goForest(){
     console.log("menuju ke hutan")
