@@ -16,30 +16,37 @@ const goldText = document.querySelector("#goldText");
 const monsterStats = document.querySelector("#monsterStats");
 const monsterNameText = document.querySelector("#monsterNameText");
 const monsterHealthText = document.querySelector("monsterHealthText");
+
+const locations = [{
+    name: "alun alun kota",
+    "button text": ["ke toko","ke hutan","lawan naga"],
+    "button function":[goStore, goForest, fightDragon],
+    text : "kamu berada di alun alun kota, kamu akan melihat tanda yang menunjukan \"toko\". "
+},
+{   name: "toko",
+    "button text": ["beli potion darah (10 emas", "beli senjata (30 emas)", "ke alun alun kota"],
+    "button function" : [buyHealth, buyWeapon, goTown ],
+    text : "kamu berada di toko, silahkan beli apa yang kamu mau"
+}
+]
 // inisiasi tombol 
 button1.onclick=goStore;
 button2.onclick=goForest;
 button3.onclick=fightDragon;
-
-function goTown(){
-    button1.innerText = "ke toko"
-    button2.innerText = "ke hutan"
-    button3.innerText = "lawan naga"
-    button1.onclick=goStore;
-    button2.onclick=goForest;
-    button3.onclick=fightDragon;
-    text.innerText = "kamu berada di alun alun kota, kamu akan melihat tanda yang menunjukan \"toko\". ";
-
+function update(location){
+    button1.innerText = location["button text"][0];
+    button2.innerText = location["button text"][1];
+    button3.innerText = location["button text"][2];
+    button1.onclick=location["button function"][0];
+    button2.onclick=location["button function"][1];
+    button3.onclick=location["button function"][2];
+    text.innerText = location.text;
 }
-
+function goTown(){
+   update(locations[0]);
+}
 function goStore(){
-    button1.innerText = "beli potion darah sebanyak 5 nyawa (10 Emas)"
-    button2.innerText = "beli senjata (30 emas)"
-    button3.innerText = "ke alun alun kota"
-    button1.onclick=buyHealth;
-    button2.onclick=buyWeapon;
-    button3.onclick=goTown;
-    text.innerText = "kamu berada di toko, silahkan beli apa yang kamu mau"
+    update(locations)[1];
 }
 function goForest(){
     console.log("menuju ke hutan")
